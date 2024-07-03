@@ -54,12 +54,12 @@ router.put('/:id', getTask, async (req, res) => {
 });
 
 // Delete a task
-router.delete('/:id', getTask, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-        await res.task.remove();
+        const task = await Task.findByIdAndDelete(req.params.id);
         res.json({ message: 'Deleted Task' });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(500).send('Server error');
     }
 });
 
