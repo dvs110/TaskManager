@@ -91,10 +91,9 @@ li:last-child {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .btn {
-    width: 100%;
-    margin: 10px 0;
+.btn {
+    width: 5rem;
+    padding: 5px 12px;
   }
 
   .form-control {
